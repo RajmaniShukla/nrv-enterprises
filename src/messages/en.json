@@ -1,1 +1,180 @@
-﻿{}
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "services": "Services",
+    "whyUs": "Why Choose Us",
+    "contact": "Contact",
+    "inquiry": "Get a Quote"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Your Trusted Partner in Lubricants & Industrial Solutions",
+      "subtitle": "Quality products for machinery, vehicles, and industrial needs — delivered with expertise.",
+      "cta": "Explore Products",
+      "ctaSecondary": "Get a Quote"
+    },
+    "about": {
+      "title": "About NRV Enterprises",
+      "description": "With over 3 years of experience, NRV Enterprises is a trusted name in lubricants and machine-related products. We serve businesses and individuals with quality, reliability, and competitive pricing."
+    },
+    "stats": {
+      "experience": "Years Experience",
+      "products": "Products",
+      "clients": "Happy Clients",
+      "team": "Team Members"
+    },
+    "featuredProducts": "Featured Products",
+    "featuredProductsSubtitle": "Top-quality lubricants and industrial products trusted by businesses across the region.",
+    "viewAll": "View All Products",
+    "whyUs": {
+      "title": "Why Choose NRV Enterprises?",
+      "subtitle": "We don't just sell products — we deliver trust, expertise, and long-term partnerships.",
+      "items": {
+        "quality": {
+          "title": "Assured Quality",
+          "desc": "Every product we supply meets strict quality standards. No compromises."
+        },
+        "expertise": {
+          "title": "Industry Expertise",
+          "desc": "3+ years of hands-on experience in lubricants and industrial solutions."
+        },
+        "delivery": {
+          "title": "Reliable Delivery",
+          "desc": "On-time delivery, every time. We value your business schedule."
+        },
+        "support": {
+          "title": "Dedicated Support",
+          "desc": "Our team is always ready to help you choose the right product."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Contact us today for a free consultation and competitive quote.",
+      "btn": "Get a Free Quote"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About NRV Enterprises",
+      "subtitle": "Built on trust, driven by quality."
+    },
+    "story": {
+      "title": "Our Story",
+      "p1": "NRV Enterprises was founded with a simple goal — to make quality lubricants and industrial products accessible to businesses of all sizes. What started as a small trading operation has grown into a trusted name in the region.",
+      "p2": "We work closely with our clients to understand their needs and recommend the right products for their machinery, vehicles, and industrial operations.",
+      "p3": "Our commitment to quality, honest pricing, and reliable service has earned us the trust of hundreds of clients across the region."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc": "To be the most trusted supplier of lubricants and industrial products — delivering quality, reliability, and expert guidance to every client."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "To expand our reach across India while maintaining the personal touch and quality standards that define NRV Enterprises."
+    },
+    "values": {
+      "title": "Our Values",
+      "quality": "Quality First",
+      "trust": "Trust & Transparency",
+      "service": "Customer-Centric Service",
+      "growth": "Continuous Growth"
+    }
+  },
+  "products": {
+    "hero": {
+      "title": "Our Products",
+      "subtitle": "A comprehensive range of lubricants and industrial products for every need."
+    },
+    "filter": {
+      "all": "All Products",
+      "engineOils": "Engine Oils",
+      "gearOils": "Gear Oils",
+      "hydraulicOils": "Hydraulic Oils",
+      "greases": "Greases",
+      "industrialLubricants": "Industrial Lubricants",
+      "machineParts": "Machine Parts"
+    },
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "inquire": "Inquire Now",
+    "noProducts": "No products found in this category.",
+    "featured": "Featured"
+  },
+  "services": {
+    "hero": {
+      "title": "Our Services",
+      "subtitle": "Beyond products — we offer expertise, guidance, and reliable support."
+    },
+    "cta": {
+      "title": "Need Help Choosing the Right Product?",
+      "subtitle": "Our experts are ready to guide you.",
+      "btn": "Talk to an Expert"
+    }
+  },
+  "whyUs": {
+    "hero": {
+      "title": "Why Choose Us",
+      "subtitle": "Here's what makes NRV Enterprises different."
+    },
+    "reasons": {
+      "title": "What Sets Us Apart"
+    },
+    "testimonials": {
+      "title": "What Our Clients Say"
+    },
+    "cta": {
+      "title": "Join Hundreds of Satisfied Clients",
+      "btn": "Get in Touch"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "We'd love to hear from you. Reach out and we'll get back to you within 24 hours."
+    },
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! We'll get back to you soon.",
+      "error": "Something went wrong. Please try again or call us directly."
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Business Hours",
+      "hoursValue": "Mon – Sat: 9:00 AM – 6:00 PM",
+      "whatsapp": "Chat on WhatsApp"
+    }
+  },
+  "inquiry": {
+    "hero": {
+      "title": "Get a Quote",
+      "subtitle": "Tell us what you need and we'll send you a competitive quote within 24 hours."
+    },
+    "form": {
+      "name": "Full Name",
+      "company": "Company Name (optional)",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "product": "Product / Service Required",
+      "quantity": "Approximate Quantity",
+      "message": "Additional Requirements",
+      "submit": "Request Quote",
+      "submitting": "Submitting...",
+      "success": "Quote request submitted! We'll contact you within 24 hours.",
+      "error": "Something went wrong. Please try again or call us directly."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "tagline": "Quality. Trust. Performance."
+  }
+}

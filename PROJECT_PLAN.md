@@ -1,7 +1,7 @@
 # 🏗️ NRV Enterprises Website — Project Plan
 
 > Created: 12 April 2026
-> Status: Phase 1 — Not Started
+> Status: Phase 1 ✅ | Phase 2 ✅ | Phase 3 ✅ Complete | Phase 4 — Next
 
 ---
 
@@ -81,11 +81,11 @@ Sanity CMS → Next.js (SSG/ISR) → Vercel CDN → User
 
 | Stage | Task | Status |
 |-------|------|--------|
-| 1.1 | Init Next.js 14 + Tailwind + folder structure | ⬜ Pending |
-| 1.2 | Setup i18n (English + Hindi routing) | ⬜ Pending |
-| 1.3 | Create Navbar + Footer components | ⬜ Pending |
-| 1.4 | Setup Sanity CMS + connect to project | ⬜ Pending |
-| 1.5 | Define Sanity schemas (Products, Services, Company Info) | ⬜ Pending |
+| 1.1 | Init Next.js 14 + Tailwind + folder structure | ✅ Done |
+| 1.2 | Setup i18n (English + Hindi routing) | ✅ Done |
+| 1.3 | Create Navbar + Footer components | ✅ Done |
+| 1.4 | Setup Sanity CMS + connect to project | ✅ Done |
+| 1.5 | Define Sanity schemas (Products, Services, Company Info) | ✅ Done |
 
 **Deliverable:** Running app locally, CMS connected, language switching works
 
@@ -96,11 +96,11 @@ Sanity CMS → Next.js (SSG/ISR) → Vercel CDN → User
 
 | Stage | Task | Status |
 |-------|------|--------|
-| 2.1 | Home page (Hero + sections) | ⬜ Pending |
-| 2.2 | About Us page | ⬜ Pending |
-| 2.3 | Products page + individual product pages | ⬜ Pending |
-| 2.4 | Services page | ⬜ Pending |
-| 2.5 | Why Choose Us page | ⬜ Pending |
+| 2.1 | Home page (Hero + sections) | ✅ Done |
+| 2.2 | About Us page | ✅ Done |
+| 2.3 | Products page + individual product pages | ✅ Done |
+| 2.4 | Services page | ✅ Done |
+| 2.5 | Why Choose Us page | ✅ Done |
 
 **Deliverable:** All pages visible, content pulled from Sanity
 
@@ -111,10 +111,10 @@ Sanity CMS → Next.js (SSG/ISR) → Vercel CDN → User
 
 | Stage | Task | Status |
 |-------|------|--------|
-| 3.1 | Contact page with form + EmailJS integration | ⬜ Pending |
-| 3.2 | Inquiry / Get Quote form | ⬜ Pending |
-| 3.3 | WhatsApp floating button | ⬜ Pending |
-| 3.4 | Google Maps embed (office location) | ⬜ Pending |
+| 3.1 | Contact page with form + EmailJS integration | ✅ Done |
+| 3.2 | Inquiry / Get Quote form | ✅ Done |
+| 3.3 | WhatsApp floating button | ✅ Done |
+| 3.4 | Google Maps embed (office location) | ✅ Done |
 
 **Deliverable:** Forms working, leads hitting your email
 
@@ -179,3 +179,4 @@ Sanity CMS → Next.js (SSG/ISR) → Vercel CDN → User
 | Date | Change |
 |------|--------|
 | 12-04-2026 | Project plan created |
+| 12-04-2026 | Phase 1 completed — Next.js, Tailwind, i18n, Navbar, Footer, Sanity install, Sanity schemas |
