@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { Package, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 import { urlFor } from "../../../../sanity/image";
+import PageHero from "@/components/ui/PageHero";
 
 interface Product {
   _id: string;
@@ -32,22 +35,16 @@ export default function ProductsContent({ products }: { products: Product[] }) {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-black mb-4">{t("hero.title")}</h1>
-          <p className="text-blue-200 text-xl">{t("hero.subtitle")}</p>
-        </div>
-      </section>
+      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} />
 
-      {/* Category Filter */}
+      {/* Category Filter — horizontally scrollable on mobile */}
       <section className="sticky top-16 z-40 bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-2 overflow-x-auto py-4">
+          <div className="flex gap-2 overflow-x-auto py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {categoryKeys.map(({ key }, i) => (
               <button
                 key={key}
-                className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium border transition-colors shrink-0 ${
                   i === 0
                     ? "bg-blue-700 text-white border-blue-700"
                     : "border-gray-200 text-gray-600 hover:bg-blue-700 hover:text-white hover:border-blue-700"
@@ -61,7 +58,7 @@ export default function ProductsContent({ products }: { products: Product[] }) {
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {products.length === 0 ? (
             <div className="text-center py-20 text-gray-400">
@@ -69,10 +66,17 @@ export default function ProductsContent({ products }: { products: Product[] }) {
               <p>{t("noProducts")}</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOnce}
+            >
               {products.map((product) => (
-                <div
+                <motion.div
                   key={product._id}
+                  variants={staggerItem}
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow group"
                 >
                   <div className="h-44 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center relative overflow-hidden">
@@ -114,9 +118,9 @@ export default function ProductsContent({ products }: { products: Product[] }) {
                       {t("inquire")} <ArrowRight size={14} />
                     </Link>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </section>

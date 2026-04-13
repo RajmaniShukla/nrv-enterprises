@@ -1,6 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 
 interface StatsProps {
   yearsOfExperience?: number;
@@ -18,16 +20,22 @@ export default function StatsSection({ yearsOfExperience = 3, teamSize = 3 }: St
   ];
 
   return (
-    <section className="bg-blue-700 text-white py-12">
+    <section className="bg-blue-700 text-white py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           {stats.map((stat) => (
-            <div key={stat.label}>
+            <motion.div key={stat.label} variants={staggerItem}>
               <div className="text-4xl font-black mb-1">{stat.value}</div>
               <div className="text-blue-200 text-sm font-medium">{stat.label}</div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

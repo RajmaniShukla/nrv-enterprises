@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { ArrowRight, Package } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 import { urlFor } from "../../../sanity/image";
 
 interface Product {
@@ -39,20 +41,33 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-12"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
             {t("featuredProducts")}
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
             {t("featuredProductsSubtitle")}
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           {products.slice(0, 6).map((product) => (
-            <div
+            <motion.div
               key={product._id}
+              variants={staggerItem}
               className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow group"
             >
               {/* Image */}
@@ -67,11 +82,8 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                 ) : (
                   <Package size={48} className="text-blue-300" />
                 )}
-                {/* Stock badge */}
                 <div className={`absolute top-3 right-3 text-xs font-semibold px-2 py-1 rounded-full ${
-                  product.inStock
-                    ? "bg-green-100 text-green-700"
-                    : "bg-red-100 text-red-700"
+                  product.inStock ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
                 }`}>
                   {product.inStock ? tp("inStock") : tp("outOfStock")}
                 </div>
@@ -84,9 +96,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2 text-lg">{product.name}</h3>
                 {product.description && (
-                  <p className="text-gray-500 text-sm line-clamp-2 mb-4">
-                    {product.description}
-                  </p>
+                  <p className="text-gray-500 text-sm line-clamp-2 mb-4">{product.description}</p>
                 )}
                 <Link
                   href={`/${locale}/inquiry?product=${product.slug.current}`}
@@ -95,19 +105,25 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
                   {tp("inquire")} <ArrowRight size={14} />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* View All */}
-        <div className="text-center mt-10">
+        <motion.div
+          className="text-center mt-10"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
           <Link
             href={`/${locale}/products`}
             className="inline-flex items-center gap-2 bg-blue-700 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-blue-800 transition-colors"
           >
             {t("viewAll")} <ArrowRight size={18} />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

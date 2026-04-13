@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import Image from "next/image";
 import { Menu, X, Globe } from "lucide-react";
 
 const navLinks = [
@@ -42,13 +43,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href={localePath("/")} className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-blue-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-black text-sm">NRV</span>
-            </div>
-            <span className="font-bold text-gray-900 text-lg hidden sm:block">
-              NRV Enterprises
-            </span>
+          <Link href={localePath("/")} className="flex items-center gap-1">
+            <Image
+              src="/logo.svg"
+              alt="NRV Enterprises"
+              width={160}
+              height={48}
+              priority
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -106,7 +109,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 px-4 py-3 space-y-1">
+        <div className="lg:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-1 shadow-md">
           {navLinks.map((link) => {
             const href = localePath(link.href);
             const isActive = isActivePath(link.href);
@@ -115,7 +118,7 @@ export default function Navbar() {
                 key={link.key}
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`block px-3 py-3 rounded-md text-sm font-medium transition-colors ${
                   isActive
                     ? "text-blue-700 bg-blue-50"
                     : "text-gray-600 hover:text-blue-700 hover:bg-gray-50"
@@ -128,7 +131,7 @@ export default function Navbar() {
           <Link
             href={localePath("/inquiry")}
             onClick={() => setMenuOpen(false)}
-            className="block mt-2 bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg text-center hover:bg-blue-800 transition-colors"
+            className="block mt-2 bg-blue-700 text-white text-sm font-semibold px-4 py-3 rounded-lg text-center hover:bg-blue-800 transition-colors"
           >
             {t("inquiry")}
           </Link>

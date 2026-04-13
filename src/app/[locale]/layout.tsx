@@ -7,11 +7,10 @@ import { type Locale } from "@/i18n";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "NRV Enterprises",
-  description: "Leading supplier of lubricants and machine-related products.",
+  title: "NRV Enterprises — Lubricants & Industrial Products",
+  description: "Leading supplier of lubricants and machine-related products in India.",
 };
 
 export default async function LocaleLayout({
@@ -28,17 +27,13 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className="antialiased">
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar />
-          <main className="pt-16 min-h-screen">
-            {children}
-          </main>
-          <Footer />
-          <WhatsAppButton />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <Navbar />
+      <main className="pt-16 min-h-screen">
+        {children}
+      </main>
+      <Footer />
+      <WhatsAppButton />
+    </NextIntlClientProvider>
   );
 }

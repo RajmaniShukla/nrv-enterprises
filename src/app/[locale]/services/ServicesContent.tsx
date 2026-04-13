@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { ArrowRight, Wrench, Truck, ShieldCheck, HeadphonesIcon, Package, BarChart3 } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
+import PageHero from "@/components/ui/PageHero";
 
 interface Service {
   _id: string;
@@ -32,22 +35,26 @@ export default function ServicesContent({ services }: { services: Service[] }) {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-black mb-4">{t("hero.title")}</h1>
-          <p className="text-blue-200 text-xl">{t("hero.subtitle")}</p>
-        </div>
-      </section>
+      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} />
 
       {/* Services Grid */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
             {displayServices.map((service) => {
               const Icon = iconMap[service.icon || ""] || Wrench;
               return (
-                <div key={service._id} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all group">
+                <motion.div
+                  key={service._id}
+                  variants={staggerItem}
+                  className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all group"
+                >
                   <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-blue-700 transition-colors">
                     <Icon size={26} className="text-blue-700 group-hover:text-white transition-colors" />
                   </div>
@@ -55,22 +62,30 @@ export default function ServicesContent({ services }: { services: Service[] }) {
                   {service.description && (
                     <p className="text-gray-500 leading-relaxed">{service.description}</p>
                   )}
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-16 bg-blue-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-black mb-4">{t("cta.title")}</h2>
-          <p className="text-blue-200 mb-8">{t("cta.subtitle")}</p>
-          <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 bg-white text-blue-800 font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors">
-            {t("cta.btn")} <ArrowRight size={18} />
-          </Link>
-        </div>
+        <motion.div
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
+          <motion.h2 variants={fadeUp} className="text-3xl font-black mb-4">{t("cta.title")}</motion.h2>
+          <motion.p variants={fadeUp} className="text-blue-200 mb-8">{t("cta.subtitle")}</motion.p>
+          <motion.div variants={fadeUp}>
+            <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 bg-white text-blue-800 font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors">
+              {t("cta.btn")} <ArrowRight size={18} />
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
     </div>
   );

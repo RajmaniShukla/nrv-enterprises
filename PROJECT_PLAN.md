@@ -125,9 +125,9 @@ Sanity CMS → Next.js (SSG/ISR) → Vercel CDN → User
 
 | Stage | Task | Status |
 |-------|------|--------|
-| 4.1 | Framer Motion animations (scroll reveals, hero) | ⬜ Pending |
-| 4.2 | Mobile responsiveness audit | ⬜ Pending |
-| 4.3 | Color theme finalization + typography | ⬜ Pending |
+| 4.1 | Framer Motion animations (scroll reveals, hero) | ✅ Done |
+| 4.2 | Mobile responsiveness audit | ✅ Done |
+| 4.3 | Color theme finalization + typography | ✅ Done |
 | 4.4 | Logo placeholder + favicon | ⬜ Pending |
 | 4.5 | Loading states, error pages (404) | ⬜ Pending |
 
