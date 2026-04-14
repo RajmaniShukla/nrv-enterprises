@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { Package, ArrowRight } from "lucide-react";
@@ -32,6 +33,11 @@ const categoryKeys = [
 export default function ProductsContent({ products }: { products: Product[] }) {
   const t = useTranslations("products");
   const locale = useLocale();
+  const [activeCategory, setActiveCategory] = React.useState("");
+
+  const filteredProducts = activeCategory
+    ? products.filter((p) => p.category === activeCategory)
+    : products;
 
   return (
     <div>
@@ -41,11 +47,12 @@ export default function ProductsContent({ products }: { products: Product[] }) {
       <section className="sticky top-16 z-40 bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-2 overflow-x-auto py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {categoryKeys.map(({ key }, i) => (
+            {categoryKeys.map(({ key, value }) => (
               <button
                 key={key}
+                onClick={() => setActiveCategory(value)}
                 className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium border transition-colors shrink-0 ${
-                  i === 0
+                  activeCategory === value
                     ? "bg-blue-700 text-white border-blue-700"
                     : "border-gray-200 text-gray-600 hover:bg-blue-700 hover:text-white hover:border-blue-700"
                 }`}
@@ -60,7 +67,7 @@ export default function ProductsContent({ products }: { products: Product[] }) {
       {/* Products Grid */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {products.length === 0 ? (
+          {filteredProducts.length === 0 ? (
             <div className="text-center py-20 text-gray-400">
               <Package size={48} className="mx-auto mb-4 opacity-30" />
               <p>{t("noProducts")}</p>
@@ -73,7 +80,7 @@ export default function ProductsContent({ products }: { products: Product[] }) {
               whileInView="visible"
               viewport={viewportOnce}
             >
-              {products.map((product) => (
+              {filteredProducts.map((product) => (
                 <motion.div
                   key={product._id}
                   variants={staggerItem}

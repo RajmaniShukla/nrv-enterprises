@@ -10,14 +10,14 @@
   },
   "home": {
     "hero": {
-      "tagline": "Your Trusted Partner in Lubricants & Industrial Solutions",
-      "subtitle": "Quality products for machinery, vehicles, and industrial needs — delivered with expertise.",
+      "tagline": "Your Trusted Partner in Industrial Supplies & Lubricants",
+      "subtitle": "Quality engine oils, lubricants & industrial supplies for machinery, vehicles, and businesses — since 2021.",
       "cta": "Explore Products",
       "ctaSecondary": "Get a Quote"
     },
     "about": {
       "title": "About NRV Enterprises",
-      "description": "With over 3 years of experience, NRV Enterprises is a trusted name in lubricants and machine-related products. We serve businesses and individuals with quality, reliability, and competitive pricing."
+      "description": "With over 3 years of experience, NRV Enterprises is a trusted name in industrial supplies, engine oil, and lubricants in West Delhi. We serve businesses and individuals with quality products, honest pricing, and reliable service."
     },
     "stats": {
       "experience": "Years Experience",
@@ -175,6 +175,6 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "tagline": "Quality. Trust. Performance."
+    "tagline": "Quality. Trust. Performance. Since 2021."
   }
 }

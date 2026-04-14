@@ -9,16 +9,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
   title: {
-    default: "NRV Enterprises — Lubricants & Industrial Products",
+    default: "NRV Enterprises — Industrial Supplies, Engine Oil & Lubricants",
     template: "%s | NRV Enterprises",
   },
   description:
-    "NRV Enterprises is a trusted supplier of lubricants and industrial products in India. Engine oils, gear oils, hydraulic oils, greases, and more.",
+    "NRV Enterprises is a trusted supplier of industrial supplies, engine oil, and lubricants in West Delhi, India. Quality products for machinery, vehicles & industrial operations — since 2021.",
   keywords: [
-    "lubricants", "engine oil", "gear oil", "hydraulic oil",
-    "industrial lubricants", "NRV Enterprises", "India",
+    "NRV Enterprises",
+    "industrial supplies Delhi",
+    "engine oil supplier Delhi",
+    "lubricants supplier India",
+    "gear oil",
+    "hydraulic oil",
+    "industrial lubricants",
+    "Tikri Kalan",
+    "West Delhi industrial supplier",
+    "machine oil Delhi",
   ],
+  authors: [{ name: "NRV Enterprises" }],
+  creator: "NRV Enterprises",
+  publisher: "NRV Enterprises",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
@@ -35,19 +49,23 @@ export const metadata: Metadata = {
     siteName: "NRV Enterprises",
     type: "website",
     locale: "en_IN",
+    title: "NRV Enterprises — Industrial Supplies, Engine Oil & Lubricants",
+    description:
+      "Trusted supplier of industrial supplies, engine oil, and lubricants in West Delhi. Serving businesses across India since 2021.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "NRV Enterprises — Lubricants & Industrial Products",
+        alt: "NRV Enterprises — Industrial Supplies, Engine Oil & Lubricants",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NRV Enterprises — Lubricants & Industrial Products",
-    description: "Trusted supplier of lubricants and industrial products in India.",
+    title: "NRV Enterprises — Industrial Supplies, Engine Oil & Lubricants",
+    description:
+      "Trusted supplier of industrial supplies, engine oil, and lubricants in West Delhi, India. Since 2021.",
     images: ["/og-image.png"],
   },
 };

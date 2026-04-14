@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Phone, Mail, MapPin } from "lucide-react";
 
@@ -23,11 +24,14 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-black text-sm">NRV</span>
-              </div>
-              <span className="font-bold text-white text-lg">NRV Enterprises</span>
+            <div className="mb-4">
+              <Image
+                src="/logo-white.svg"
+                alt="NRV Enterprises"
+                width={160}
+                height={48}
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-sm text-gray-400 mb-4 leading-relaxed">
               {tf("tagline")}

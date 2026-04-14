@@ -9,8 +9,12 @@ import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 export const metadata: Metadata = {
-  title: "NRV Enterprises — Lubricants & Industrial Products",
-  description: "Leading supplier of lubricants and machine-related products in India.",
+  title: {
+    default: "NRV Enterprises — Industrial Supplies, Engine Oil & Lubricants",
+    template: "%s | NRV Enterprises",
+  },
+  description:
+    "NRV Enterprises is a trusted supplier of industrial supplies, engine oil, and lubricants in West Delhi, India. Quality products since 2021.",
 };
 
 export default async function LocaleLayout({
